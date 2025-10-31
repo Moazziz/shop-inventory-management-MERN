@@ -6,6 +6,7 @@ export const getProductsController = async (req, res) => {
         // get user
         const user = await User.findOne({ _id:req.user.userId }).populate("products");
         if (!user){ return res.status(404).json({ status:false, msessage: "unauthorized user",error })};
+        console.log("users : ", user);
         return res.status(200).json({ status:true, data: user.products });
     } catch (error) {
         return res.status(404).json({ status:false, msessage: "failed to fetch product!",error })
