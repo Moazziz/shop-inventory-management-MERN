@@ -52,7 +52,15 @@ export const loginController = async (req, res) => {
             signed: false // Indicates if the cookie should be signed
         }
         // console.log(token);
-        res.cookie('token', token);
+        // res.cookie('token', token);
+        // Example: inside your login controller
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,           // ✅ required for HTTPS (Render)
+  sameSite: "None",       // ✅ allows cross-site requests (Netlify → Render)
+  maxAge: 7 * 24 * 60 * 60 * 1000, // optional (7 days)
+});
+
         res.status(200).json({ status:true,message: 'Login successful' });
     } catch (error) {
         console.error(error);
