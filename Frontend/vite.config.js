@@ -6,8 +6,8 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        // target:'http://localhost:8000/'
-        target:'https://shop-inventory-management-mern.onrender.com/',
+        target:'http://localhost:8000/',
+        // target:'https://shop-inventory-management-mern.onrender.com/',
          changeOrigin: true,
 
       }

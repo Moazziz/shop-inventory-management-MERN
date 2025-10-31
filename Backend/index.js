@@ -7,11 +7,13 @@ import 'dotenv/config'
 import connectDB from './Db/index.js';
 
 
+app.use(cookieParser());
+
 const server = express();
 const PORT = process.env.PORT || 8000;
 server.use(cors({
-  // origin: "http://localhost:5173",
-  origin: "https://inventory2u.netlify.app",
+  origin: "http://localhost:5173",
+  // origin: "https://inventory2u.netlify.app",
   // origin:process.env.ORIGIN,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // optional if you use cookies/auth headers
