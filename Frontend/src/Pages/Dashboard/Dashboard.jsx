@@ -32,6 +32,7 @@ const Dashboard = () => {
         };
 
         const response = await fetch(`${baseUrl}/products`, requestOptions);
+        console.log("response",response)
         const result = await response.json();
         if (result.status) {
             console.log("Product recived succesfully");
