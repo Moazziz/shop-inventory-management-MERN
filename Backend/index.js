@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 8000;
 
 // Middleware
 server.use(cors({
-  origin: "http://localhost:5173",
-  // origin: "https://inventory2u.netlify.app",
+  // origin: "http://localhost:5173",
+  origin: "https://inventory2u.netlify.app",
   // origin: process.env.ORIGIN,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
